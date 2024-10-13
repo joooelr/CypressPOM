@@ -1,27 +1,32 @@
 Cypress Automation Project
 
-**Overview**
+#**Overview**
+
 This project is designed for automation testing using Cypress on the website Automation Exercise. It includes tests to validate various functionalities on the site.
 
-**Prerequisites**
+#**Prerequisites**
+
 Before you begin, ensure you have met the following requirements:
 Node.js and npm installed on your machine.
 Cypress installed as a development dependency.
 
-**Installation**
+#**Installation**
+
 Clone the repository:
-git clone https://github.com/joooelr
-cd repository-directory
+`git clone https://github.com/joooelr/CypressPOM`
+`cd repository-directory`
 
 Install the dependencies:
 
-npm install cypress --save-dev
-npm install @faker-js/faker --save-dev
-npm install --save-dev cypress-mochawesome-reporter
+`npm install cypress --save-dev`
+`npm install @faker-js/faker --save-dev`
+`npm install --save-dev cypress-mochawesome-reporter`
 
-**Configuration**
+#**Configuration**
+
 Add the following configuration to your cypress.config.js:
 
+```
 const { defineConfig } = require('cypress');
 
 module.exports = defineConfig({
@@ -32,22 +37,24 @@ module.exports = defineConfig({
     },
   },
 });
+```
+#**Running Tests**
 
-**Running Tests**
 To open the Cypress Test Runner, use:
-npx cypress open
+`npx cypress open`
 or 
-npm run cypress:open
+`npm run cypress:open`
 
 To run tests in headless mode with video recording, use:
-npx cypress run
+`npx cypress run`
 or 
-npm run cypress:run
+`npm run cypress:run`
 
 
-**Viewing Reports**
+#**Viewing Reports**
+
 After running tests in headless mode, you can view the generated Mochawesome reports in the specified folder (default is cypress/reports).
 
-Contributing
+#**Contributing**
 If you have suggestions for improving this project, feel free to open an issue or create a pull request.
 
