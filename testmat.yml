@@ -1,0 +1,34 @@
+name: Run Cypress Tests with Testomat.io
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  cypress-tests:
+    name: Run Cypress Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the code
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Step 2: Set up Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 'lts/*'
+
+      # Step 3: Install dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # Step 4: Run Cypress Tests
+      - name: Run Cypress Tests
+        env:
+          TESTOMATIO: ${{ secrets.TESTOMATIO_API_KEY }}
+        run: |
+          npx check-tests@latest Cypress.io "**/*{.,_}{test,spec,cy}.js" --dir cypress/e2e
